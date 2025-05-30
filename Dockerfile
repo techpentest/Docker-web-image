@@ -4,7 +4,6 @@ from ubuntu:latest
 label version v1.0
 label author devopsadmin
 
-SHELL ["/bin/bash", -c]
 run apt-get update -y && \
 apt-get upgrade -y && \
 apt install apache2 -y
