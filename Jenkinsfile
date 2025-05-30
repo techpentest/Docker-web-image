@@ -17,7 +17,6 @@ pipeline {
                     sudo sh get-docker.sh
                     sudo usermod -aG docker $USER
                     sudo newgrp docker
-                    sudo systemctl restart jenkins
                 else
                     echo "Docker is already installed."
                 fi
