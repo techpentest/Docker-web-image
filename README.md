@@ -9,7 +9,7 @@ To write a **Jenkins Pipeline script** in a `README.md` file, use **Markdown fen
 ````markdown
 ## 🛠️ Jenkins Declarative Pipeline
 
-Below is an example Jenkins pipeline that builds and deploys a Docker image:
+Below is an example Jenkins pipeline that remove Docker container and image:
 
 ```groovy
 pipeline {
