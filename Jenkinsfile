@@ -15,8 +15,8 @@ pipeline {
                     echo "Docker not found. Installing Docker..."
                     curl -fsSL https://get.docker.com -o get-docker.sh
                     sudo sh get-docker.sh
-                    sudo usermod -aG docker $USER
-                    newgrp docker
+                    sudo -S usermod -aG docker $USER
+                    sudo -S newgrp docker
                 else
                     echo "Docker is already installed."
                 fi
@@ -42,9 +42,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    sudo docker stop ${CONTAINER_NAME} || true
-                    sudo docker rm ${CONTAINER_NAME} || true
-                    sudo docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}:${BUILD_NUMBER}
+                    sudo -S docker stop ${CONTAINER_NAME} || true
+                    sudo -S docker rm ${CONTAINER_NAME} || true
+                    sudo -S docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}:${BUILD_NUMBER}
                     '''
                 }
             }
