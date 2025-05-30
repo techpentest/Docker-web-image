@@ -42,9 +42,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}:${BUILD_NUMBER}
+                    sudo docker stop ${CONTAINER_NAME} || true
+                    sudo docker rm ${CONTAINER_NAME} || true
+                    sudo docker run -d --name ${CONTAINER_NAME} -p 80:80 ${IMAGE_NAME}:${BUILD_NUMBER}
                     '''
                 }
             }
