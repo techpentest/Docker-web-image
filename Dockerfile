@@ -5,7 +5,7 @@ label version v1.0
 label author devopsadmin
 maintainer description="devopsadmin"
 
-run sudo -S apt-get update -y && \
+run sudo apt-get update -y && \
 apt-get upgrade -y && \
 apt install apache2 -y
 
