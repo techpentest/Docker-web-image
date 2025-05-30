@@ -15,8 +15,9 @@ pipeline {
                     echo "Docker not found. Installing Docker..."
                     curl -fsSL https://get.docker.com -o get-docker.sh
                     sudo sh get-docker.sh
-                    sudo -S usermod -aG docker $USER
-                    sudo -S newgrp docker
+                    sudo usermod -aG docker $USER
+                    sudo newgrp docker
+                    sudo systemctl restart jenkins
                 else
                     echo "Docker is already installed."
                 fi
