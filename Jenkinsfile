@@ -1,5 +1,7 @@
 pipeline {
     agent any
+    
+    tool name: 'docker', type: 'dockerTool'
 
     environment {
         GIT_REPO = 'https://github.com/techpentest/Docker-web-image.git'
