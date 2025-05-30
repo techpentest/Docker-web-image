@@ -3,8 +3,8 @@
 from ubuntu:latest
 label version v1.0
 label author devopsadmin
-maintainer description="devopsadmin"
 
+SHELL ["/bin/sh", -c]
 run sudo apt-get update -y && \
 apt-get upgrade -y && \
 apt install apache2 -y
